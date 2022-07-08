@@ -28,6 +28,7 @@ def sign(x):
         return -1
     return 0
 
+# OCTANT 1 ONLY
 def draw_line(im, x1, y1, x2, y2):
     # Initialization, create constants
     A = 2 * (y2 - y1)
@@ -52,15 +53,7 @@ def draw_line(im, x1, y1, x2, y2):
 
     return im
 
-
-
-
-
-
-
-
-
-
+# ALL OCTANTS
 def better_draw_line(im, x1, y1, x2, y2):
     x = x1
     y = y1
@@ -102,11 +95,10 @@ def better_draw_line(im, x1, y1, x2, y2):
 def main():
     im = create_pixels((64, 64))
 
+    # DRAW LINES HERE
     im = better_draw_line(im, 2, 2, 55, 40)
 
-
-
-
+    # END DRAW LINES
 
     im = im.transpose(method=Image.Transpose.FLIP_TOP_BOTTOM)
     im.show()
